@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import BooksPage from "./pages/BooksPage";
+// import BooksPage from "./pages/BooksPage";
 import ProfilePage from "./pages/ProfilePage";
 import Footer from "./components/Footer";
 import SignupPage from "./pages/SignupPage";
@@ -20,7 +20,7 @@ const App = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/books" element={<BooksPage />} />
+            {/* <Route path="/books" element={<BooksPage />} /> */}
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -36,3 +36,15 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

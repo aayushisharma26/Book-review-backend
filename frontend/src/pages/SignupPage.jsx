@@ -21,7 +21,7 @@ const SignupPage = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:4000/user/signup", formData);
+      await axios.post("https://book-review-project-six.vercel.app/user/signup", formData);
 
       alert("Signup successful!");
       navigate("/"); // Redirect to the homepage or login page
