@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post('/post', authenticate, isAdmin, createBooks);
 
-router.get("/books", getBooks); // GET route to fetch books
+router.get("/books", getBooks); 
 
 
 router.put('/books/:id', authenticate, isAdmin, updateBooks);
