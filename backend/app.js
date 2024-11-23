@@ -23,9 +23,14 @@ mongoose
     console.error("Database connection failed:", err.message);
   });
 
+
+
+app.get("/", (req, res) => {
+  res.send("Done");
+})
 app.use("/user", signupRoute);
 
-app.use("/books",booksRoute);
+app.use("/books", booksRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
