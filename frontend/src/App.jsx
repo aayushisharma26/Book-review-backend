@@ -1,18 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import BooksPage from "./pages/BooksPage";
+import ProfilePage from "./pages/ProfilePage";
+import Footer from "./components/Footer";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        {/* Navbar at the top */}
+        <Navbar />
 
-export default App
+        {/* Main content */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </main>
+        <Footer/>
+
+        {/* Footer at the bottom */}
+      </div>
+    </Router>
+  );
+};
+
+export default App;
