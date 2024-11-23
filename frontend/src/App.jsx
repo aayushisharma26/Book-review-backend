@@ -5,6 +5,9 @@ import HomePage from "./pages/HomePage";
 import BooksPage from "./pages/BooksPage";
 import ProfilePage from "./pages/ProfilePage";
 import Footer from "./components/Footer";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+
 
 const App = () => {
   return (
@@ -19,6 +22,9 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/login" element={<LoginPage />} />
+
           </Routes>
         </main>
         <Footer/>
