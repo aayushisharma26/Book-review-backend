@@ -23,6 +23,27 @@ export const createBooks = async (req, res) => {
   }
 };
 
+export const getBooks = async (req, res) => {
+  try {
+    // Extract optional query parameters for filtering
+    const { category, author } = req.query;
+
+    // Build a dynamic query object
+    const query = {};
+    if (category) query.category = category;
+    if (author) query.author = author;
+
+    // Fetch books from the database
+    const books = await Books.find(query);
+
+    // Send the response
+    res.status(200).json({ message: "Books retrieved successfully", books });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 export const updateBooks = async (req, res) => {
   const { id } = req.params;
   const { bookName, author, image, review, rating, category, tags, publisher, yearOfPublishing } = req.body;
