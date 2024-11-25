@@ -27,7 +27,7 @@ const LoginPage = () => {
       localStorage.setItem("token", token);
 
       alert("Login successful!");
-      navigate("/dashboard"); // Redirect to the dashboard or another protected page
+      navigate("/"); // Redirect to the dashboard or another protected page
     } catch (err) {
       console.error("Login failed:", err.response?.data?.message || err.message);
       setError(err.response?.data?.message || "An error occurred. Please try again.");

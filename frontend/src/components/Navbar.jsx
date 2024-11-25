@@ -14,6 +14,8 @@ const Navbar = () => {
           <Link to="/profile" className="hover:text-gray-300">Profile</Link>
           <Link to="/signup" className="hover:text-gray-300">Signup</Link>
           <Link to="/login" className="hover:text-gray-300">Login</Link>
+          
+          
 
         </div>
       </div>
@@ -22,3 +24,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
