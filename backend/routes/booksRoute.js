@@ -2,13 +2,15 @@
 import express from 'express';
 import { authenticate } from '../middleware/authMiddleware.js';
 import { isAdmin } from '../middleware/isAdmin.js';
-import { addReview, getBookReviews, createBooks, updateBooks, deleteBooks,getBooks } from '../controllers/booksController.js';
+import { addReview, getBookReviews, createBooks, updateBooks, deleteBooks,getBooks ,getBookById} from '../controllers/booksController.js';
 
 const router = express.Router();
 
 router.post('/post', authenticate, isAdmin, createBooks);
 
 router.get("/books", getBooks); 
+
+router.get('/books/:id', getBookById);
 
 
 router.put('/books/:id', authenticate, isAdmin, updateBooks);
