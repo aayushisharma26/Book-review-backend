@@ -83,23 +83,24 @@ export const deleteBooks = async (req, res) => {
   }
 };
 
-
 export const addReview = async (req, res) => {
-  const { id } = req.params;
-  const { user, review, rating } = req.body; 
+  const { id } = req.params; // Book ID
+  const { user, review, rating } = req.body;
+
   try {
     const book = await Books.findById(id);
     if (!book) return res.status(404).json({ message: "Book not found" });
 
     const newReview = { user, review, rating };
-    book.reviews.push(newReview); 
-    const updatedBook = await book.save();
-    res.status(200).json({ message: "Review added successfully", book: updatedBook });
+    book.reviews.push(newReview);
+    await book.save();
+
+    res.status(200).json({ message: "Review added successfully", book });
   } catch (error) {
+    console.error("Error in addReview:", error.message);
     res.status(500).json({ message: error.message });
   }
 };
-
 export const getBookReviews = async (req, res) => {
   const { id } = req.params;
 

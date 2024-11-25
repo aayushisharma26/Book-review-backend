@@ -17,7 +17,7 @@ router.put('/books/:id', authenticate, isAdmin, updateBooks);
 
 router.delete('/books/:id', authenticate, isAdmin, deleteBooks);
 
-router.post('/books/reviews/:id',  addReview);
+router.post('/books/:id/reviews', authenticate, addReview);
 
 router.get('/books/:id/reviews', getBookReviews);
 

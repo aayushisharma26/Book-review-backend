@@ -31,7 +31,13 @@ const booksSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  reviews: [reviewSchema], 
+  reviews: [
+    {
+      user: String,
+      review: String,
+      rating: Number,
+    },
+  ], 
 }, { timestamps: true }); 
 
 const Books = mongoose.model("Books", booksSchema);
